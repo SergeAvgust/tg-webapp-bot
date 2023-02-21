@@ -15,10 +15,10 @@ function incrementSum(amount) {
     money += amount;
     if (money > 0) {
         tg.MainButton.setText(money);
-        tg.MainButton.show();
+        
     }
     else {
-        tg.MainButton.hide();
+        
     }
 };
 
