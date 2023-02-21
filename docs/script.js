@@ -2,6 +2,7 @@ let tg = window.Telegram.WebApp;
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
+tg.MainButton.show()
 
 let order = {};
 let pizzas = {};
