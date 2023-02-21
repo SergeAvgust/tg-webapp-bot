@@ -5,8 +5,20 @@ tg.MainButton.color = "#2cab37";
 
 let order = {};
 let pizzas = {};
+let money = 0;
 
 order['user'] = tg.initDataUnsafe.user.username
+
+function incrementSum(amount) {
+    money += amount;
+    if (money > 0) {
+        tg.MainButton.setText(money);
+        tg.MainButton.show();
+    }
+    else {
+        tg.MainButton.hide();
+    }
+};
 
 let inner_btns = document.querySelectorAll('.innerBtns')
 inner_btns.forEach(btn_div => {
@@ -21,6 +33,7 @@ inner_btns.forEach(btn_div => {
         counter++;
         counter_field.innerHTML = counter;
         pizzas[btn_div.id] = counter;
+        incrementSum(btn_div.querySelector('.price').value)
     });
 
     rmv_btn.addEventListener('click', () => {
@@ -28,11 +41,13 @@ inner_btns.forEach(btn_div => {
             counter--;
             counter_field.innerHTML = counter;
             pizzas[btn_div.id] = counter;
+            incrementSum(-btn_div.querySelector('.price').value)
         }
         else if (counter === 1) {
             counter--;
             counter_field.innerHTML = counter;
             delete pizzas[btn_div.id];
+            incrementSum(-btn_div.querySelector('.price').value)
         }
     });
 
