@@ -14,7 +14,7 @@ order['user'] = tg.initDataUnsafe.user.username
 function incrementSum(amount) {
     money += amount;
     if (money > 0) {
-        tg.MainButton.setText('₽');
+        tg.MainButton.setText('₽')
         
     }
     else {
