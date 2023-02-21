@@ -15,6 +15,16 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 200px 200px 200px;
 }
+.innerHorizontal {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
+}
+.innerBtns {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 0px 20px
+}
 
 .img {
 	width: 130px;
@@ -26,7 +36,7 @@ body {
 
 .btn {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 10px 10px;
 	border: none;
 	background: rgb(248, 168, 24);
 	border-radius: 10px;
@@ -38,6 +48,19 @@ body {
 }
 
 .btn:hover {
+	background: lightgreen;
+}
+
+.rmv {
+	background: rgb(218 41 28);
+}
+.rmv:hover {
+	background: rgb(255, 0, 0);
+}
+.add {
+	background: rgb(11, 206, 31);
+}
+.add:hover {
 	background: lightgreen;
 }
 
