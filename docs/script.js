@@ -38,7 +38,7 @@ inner_btns.forEach(btn_div => {
         counter_field.innerHTML = counter;
         pizzas[btn_div.id] = counter;
         p = btn_div.querySelector('.price')
-        v = p.value
+        v = p.getAttribute('data-value')
         incrementSum(v)
     });
 
