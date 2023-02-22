@@ -37,7 +37,9 @@ inner_btns.forEach(btn_div => {
         counter++;
         counter_field.innerHTML = counter;
         pizzas[btn_div.id] = counter;
-        incrementSum(btn_div.querySelector('.price').value)
+        p = btn_div.querySelector('.price')
+        v = p.value
+        incrementSum(v)
     });
 
     rmv_btn.addEventListener('click', () => {
