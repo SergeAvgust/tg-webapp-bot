@@ -19,7 +19,7 @@ function incrementSum(amount) {
         tg.MainButton.show();
     }
     else {
-        tg.MainButton.setText('3');
+        tg.MainButton.setText(money.toString());
         tg.MainButton.show();
     }
 };
@@ -47,13 +47,13 @@ inner_btns.forEach(btn_div => {
             counter--;
             counter_field.innerHTML = counter;
             pizzas[btn_div.id] = counter;
-            incrementSum(-btn_div.querySelector('.price').value)
+            incrementSum(-btn_div.querySelector('.price').getAttribute('data-value'))
         }
         else if (counter === 1) {
             counter--;
             counter_field.innerHTML = counter;
             delete pizzas[btn_div.id];
-            incrementSum(-btn_div.querySelector('.price').value)
+            incrementSum(-btn_div.querySelector('.price').getAttribute('data-value'))
         }
     });
 
