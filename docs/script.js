@@ -46,7 +46,7 @@ inner_btns.forEach(btn_div => {
     });
 
     rmv_btn.addEventListener('click', () => {
-        if (counter > 1) {
+        if (counter > 0) {
             counter--;
             counter_field.innerHTML = counter;
             pizzas[btn_div.id] = counter;
