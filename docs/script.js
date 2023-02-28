@@ -51,13 +51,9 @@ inner_btns.forEach(btn_div => {
             counter_field.innerHTML = counter;
             pizzas[btn_div.id] = counter;
             incrementSum(-parseInt(btn_div.querySelector('.price').getAttribute('data-value')))
+            if (counter === 1) {delete pizzas[btn_div.id]; }
         }
-        else if (counter === 1) {
-            counter--;
-            counter_field.innerHTML = counter;
-            delete pizzas[btn_div.id];
-            incrementSum(-parseint(btn_div.querySelector('.price').getAttribute('data-value')))
-        }
+        
     });
 
 
