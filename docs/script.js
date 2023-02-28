@@ -13,10 +13,11 @@ let money = 0;
 order['user'] = tg.initDataUnsafe.user.username
 */
 function incrementSum(amount) {
+    parseInt(money)
     money += amount;
     m = money.toString()
     if (money > 0) {
-        tg.MainButton.setText('₽');
+        tg.MainButton.setText(m);
         tg.MainButton.show();
     }
     else {
