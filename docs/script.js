@@ -59,7 +59,7 @@ inner_btns.forEach(btn_div => {
 
 });
 
-Telegram.WebApp.onEvent('MainButtonClicked', () => {
+tg.onEvent('MainButtonClicked', () => {
     order['pizzas'] = pizzas;
     tg.MainButton.setText('Clicked!');
     alert(JSON.stringify(order))
