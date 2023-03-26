@@ -59,10 +59,15 @@ inner_btns.forEach(btn_div => {
 
 });
 
+tg.MainButton.onClick(function(){
+    tg.MainButton.setText('Clicked via onClick');
+    tg.close()
+})
+
 tg.onEvent('MainButtonClicked', () => {
     order['pizzas'] = pizzas;
     tg.MainButton.setText('Clicked!');
     alert(JSON.stringify(order))
     tg.sendData(order)
     tg.close()
-})
+});
