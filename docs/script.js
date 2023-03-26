@@ -61,6 +61,7 @@ inner_btns.forEach(btn_div => {
 
 Telegram.WebApp.onEvent('MainButtonClicked', () => {
     order['pizzas'] = pizzas;
+    tg.MainButton.setText('Clicked!');
     alert(JSON.stringify(order))
     tg.sendData(order)
     tg.close()
