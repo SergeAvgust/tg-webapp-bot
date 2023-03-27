@@ -2,16 +2,16 @@ let tg = window.Telegram.WebApp;
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
-tg.MainButton.hide()
+tg.MainButton.hide();
 
 
 let order = {};
 let pizzas = {};
 let money = 0;
 
-/*
+
 order['user'] = tg.initDataUnsafe.user.username
-*/
+
 function incrementSum(amount) {
     parseInt(money)
     parseInt(amount)
@@ -22,8 +22,7 @@ function incrementSum(amount) {
         tg.MainButton.show();
     }
     else {
-        tg.MainButton.setText(m);
-        tg.MainButton.show();
+        tg.MainButton.hide();
     }
 };
 
@@ -61,13 +60,8 @@ inner_btns.forEach(btn_div => {
 
 tg.MainButton.onClick(function(){
     tg.MainButton.setText('Clicked via onClick');
+    order['pizzas'] = pizzas;
+    alert(JSON.stringify(order))
+    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, JSON.stringify(order));
     tg.close()
 })
-
-tg.onEvent('MainButtonClicked', () => {
-    order['pizzas'] = pizzas;
-    tg.MainButton.setText('Clicked!');
-    alert(JSON.stringify(order))
-    tg.sendData(order)
-    tg.close()
-});
