@@ -61,7 +61,8 @@ inner_btns.forEach(btn_div => {
 tg.MainButton.onClick(function(){
     tg.MainButton.setText('Clicked via onClick');
     order['pizzas'] = pizzas;
-    alert(JSON.stringify(order))
+    
     tg.answerWebAppQuery(tg.initDataUnsafe.query_id, JSON.stringify(order));
+    alert(JSON.stringify(order))
     tg.close()
 })
