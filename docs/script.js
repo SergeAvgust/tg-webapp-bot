@@ -10,7 +10,7 @@ let pizzas = {};
 let money = 0;
 
 
-order['user'] = tg.initDataUnsafe.user.username
+order['user'] = tg.initDataUnsafe.user
 
 function incrementSum(amount) {
     parseInt(money)
@@ -61,8 +61,14 @@ inner_btns.forEach(btn_div => {
 tg.MainButton.onClick(function(){
     tg.MainButton.setText('Clicked via onClick');
     order['pizzas'] = pizzas;
+
+    var result= {
+        InlineQueryResultArticle:[
+          {type:'article',id: tg.initDataUnsafe.query_id, title:"RESULT MSG", input_message_content:JSON.stringify(order)}
+        ]
+    };
     
-    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, JSON.stringify(order));
-    alert(JSON.stringify(order))
+    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, result);
+    tg.MainButton.setText('data passed to bot');
     tg.close()
 })
