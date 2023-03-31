@@ -68,7 +68,8 @@ tg.MainButton.onClick(function(){
         ]
     };
     alert(result)
-    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, result);
+    var qid = tg.initDataUnsafe.query_id;
+    tg.answerWebAppQuery(qid, result);
     tg.MainButton.setText('data passed to bot');
     tg.close()
 })
