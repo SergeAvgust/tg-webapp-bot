@@ -64,10 +64,10 @@ tg.MainButton.onClick(function(){
 
     var result= {
         InlineQueryResultArticle:[
-          {type:'article',id: tg.initDataUnsafe.query_id, title:"RESULT MSG", input_message_content:JSON.stringify(order)}
+          {type:'article',id: '1', title:"RESULT MSG", input_message_content:JSON.stringify(order)}
         ]
     };
-    
+    alert(result)
     tg.answerWebAppQuery(tg.initDataUnsafe.query_id, result);
     tg.MainButton.setText('data passed to bot');
     tg.close()
