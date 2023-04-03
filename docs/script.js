@@ -9,9 +9,6 @@ let order = {};
 let pizzas = {};
 let money = 0;
 
-
-order['user'] = tg.initDataUnsafe.user
-
 function incrementSum(amount) {
     parseInt(money)
     parseInt(amount)
