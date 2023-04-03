@@ -62,14 +62,7 @@ tg.MainButton.onClick(function(){
     tg.MainButton.setText('Clicked via onClick');
     order['pizzas'] = pizzas;
 
-    var result= {
-        InlineQueryResultArticle:[
-          {type:'article',id: '1', title:"RESULT MSG", input_message_content:JSON.stringify(order)}
-        ]
-    };
-    alert(result)
-    var qid = tg.initDataUnsafe.query_id;
-    tg.answerWebAppQuery(qid, result);
+    tg.sendData(order);
     tg.MainButton.setText('data passed to bot');
-    tg.close()
+    tg.close();
 })
