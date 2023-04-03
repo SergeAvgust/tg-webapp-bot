@@ -62,7 +62,7 @@ tg.MainButton.onClick(function(){
     tg.MainButton.setText('Clicked via onClick');
     order['pizzas'] = pizzas;
 
-    tg.sendData(order);
+    tg.sendData(JSON.stringify(order));
     tg.MainButton.setText('data passed to bot');
     tg.close();
 })
